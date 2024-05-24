@@ -68,6 +68,10 @@ AddEventHandler('rsg-wanted:dataYenile', function(dateData, reasonData, descData
     local src = source
     local xPlayer = RSGCore.Functions.GetPlayer(src)
 
+    -- Remove the old poster data from the database
+    local deleteQuery = "DELETE FROM wanted_posters WHERE is_edited = 1"
+    MySQL.Async.execute(deleteQuery, {})
+
     insertPosterData(dateData, reasonData, descData, rewardData, imageData, xPlayer.PlayerData.citizenid, true)
 end)
 
