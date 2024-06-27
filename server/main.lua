@@ -6,8 +6,6 @@ local description = "breaking the law in the county"
 local reward = "2500"
 local image = "https://discord.com/channels/1070422645667012628/1099372115058229310/1114263333571399834"
 
-
-
 function insertPosterData(date, reason, description, reward, image, source, isEdited)
     local insertQuery = "INSERT INTO wanted_posters (date, reason, description, reward, image, created_by, is_edited) VALUES (@date, @reason, @description, @reward, @image, @created_by, @is_edited)"
     local values = {
@@ -43,10 +41,6 @@ AddEventHandler('rsg-wanted:openUI:server', function()
         end
     end)
 end)
-
-
-
-
 
 RegisterServerEvent('rsg-wanted:getPosterData')
 AddEventHandler('rsg-wanted:getPosterData', function()
