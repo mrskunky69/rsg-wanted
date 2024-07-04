@@ -37,7 +37,7 @@ Citizen.CreateThread(function()
                         icon = Config['Target']['targetIcon']['preview'],
                         label = Config['Target']['targetLabels']['buy'],
                     },
-					{
+                    {
                         event = "rsg-wanted:openEditor",
                         icon = Config['Target']['targetIcon']['editor'],
                         label = Config['Target']['targetLabels']['editor'],
@@ -114,12 +114,10 @@ AddEventHandler('rsg-wanted:openEditor', function()
     end)
 end)
 
-
-
 RegisterNUICallback('updateData', function(data)
     TriggerServerEvent('rsg-wanted:dataYenile', data.dateData, data.reasonData, data.descData, data.rewardData, data.imageData)
 end)
 
 RegisterNUICallback('exit', function()
-	SetNuiFocus(false, false)
+    SetNuiFocus(false, false)
 end)
